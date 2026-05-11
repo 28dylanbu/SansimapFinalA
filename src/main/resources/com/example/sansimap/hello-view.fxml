@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ========================================================= -->
+<!-- IMPORTACIONES JAVA FX -->
+<!-- ========================================================= -->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<!--
+Pantalla de inicio de sesión de SansiMap.
+Permite iniciar sesión, mostrar/ocultar contraseña,
+ir al registro y recuperar contraseña.
+-->
+
+<StackPane
+
+        xmlns="http://javafx.com/javafx/17"
+        xmlns:fx="http://javafx.com/fxml/1"
+
+        fx:controller="com.example.sansimap.HelloController"
+
+        style="
+            -fx-background-color:
+            linear-gradient(to bottom right, #003366, #000511);
+        ">
+
+    <!-- ========================================================= -->
+    <!-- CONTENEDOR PRINCIPAL -->
+    <!-- ========================================================= -->
+
+    <VBox
+
+            alignment="CENTER"
+
+            spacing="20"
+
+            maxWidth="380"
+            maxHeight="450"
+
+            style="
+                -fx-background-color: white;
+                -fx-background-radius: 15;
+
+                -fx-effect:
+                dropshadow(
+                    three-pass-box,
+                    rgba(0,0,0,0.5),
+                    20,
+                    0,
+                    0,
+                    0
+                );
+            ">
+
+        <!-- Márgenes internos -->
+        <padding>
+            <Insets
+                    top="40"
+                    right="40"
+                    bottom="40"
+                    left="40"/>
+        </padding>
+
+        <!-- ========================================================= -->
+        <!-- LOGO -->
+        <!-- ========================================================= -->
+
+        <HBox alignment="CENTER" spacing="5">
+
+            <Label
+                    text="SANSI"
+
+                    style="
+                        -fx-font-weight: bold;
+                        -fx-font-size: 32;
+                        -fx-text-fill: #e3000f;
+                    "/>
+
+            <Label
+                    text="MAP"
+
+                    style="
+                        -fx-font-style: italic;
+                        -fx-font-weight: bold;
+                        -fx-font-size: 32;
+                        -fx-text-fill: #003b73;
+                    "/>
+
+        </HBox>
+
+        <!-- ========================================================= -->
+        <!-- SUBTÍTULO -->
+        <!-- ========================================================= -->
+
+        <Label
+
+                text="INICIAR SESIÓN"
+
+                style="
+                    -fx-font-size: 14;
+                    -fx-text-fill: #666666;
+                    -fx-padding: -10 0 15 0;
+                "/>
+
+        <!-- ========================================================= -->
+        <!-- CAMPO USUARIO -->
+        <!-- ========================================================= -->
+
+        <HBox
+
+                alignment="CENTER_LEFT"
+
+                spacing="10"
+
+                style="
+                    -fx-border-color: #b3b3b3;
+                    -fx-border-radius: 20;
+                    -fx-background-color: transparent;
+                    -fx-padding: 8 15 8 15;
+                ">
+
+            <!-- Icono usuario -->
+            <Label
+
+                    text="👤"
+
+                    style="
+                        -fx-font-size: 16;
+                        -fx-text-fill: #808080;
+                    "/>
+
+            <!-- Campo usuario -->
+            <TextField
+
+                    fx:id="campoUsuario"
+
+                    promptText="Usuario o Correo Electrónico"
+
+                    HBox.hgrow="ALWAYS"
+
+                    style="
+                        -fx-background-color: transparent;
+                        -fx-prompt-text-fill: #999999;
+                        -fx-text-fill: #333333;
+                    "/>
+
+        </HBox>
+
+        <!-- ========================================================= -->
+        <!-- CAMPO CONTRASEÑA -->
+        <!-- ========================================================= -->
+
+        <HBox
+
+                alignment="CENTER_LEFT"
+
+                spacing="10"
+
+                style="
+                    -fx-border-color: #b3b3b3;
+                    -fx-border-radius: 20;
+                    -fx-background-color: transparent;
+                    -fx-padding: 8 15 8 15;
+                ">
+
+            <!-- Icono candado -->
+            <Label
+
+                    text="🔒"
+
+                    style="
+                        -fx-font-size: 16;
+                        -fx-text-fill: #808080;
+                    "/>
+
+            <!-- Contenedor de contraseña -->
+            <StackPane
+
+                    alignment="CENTER_LEFT"
+
+                    HBox.hgrow="ALWAYS">
+
+                <!-- Campo oculto -->
+                <PasswordField
+
+                        fx:id="campoPasswordOculto"
+
+                        promptText="Contraseña"
+
+                        style="
+                            -fx-background-color: transparent;
+                            -fx-prompt-text-fill: #999999;
+                            -fx-text-fill: #333333;
+                            -fx-padding: 0;
+                        "/>
+
+                <!-- Campo visible -->
+                <TextField
+
+                        fx:id="campoPasswordVisible"
+
+                        visible="false"
+
+                        promptText="Contraseña"
+
+                        style="
+                            -fx-background-color: transparent;
+                            -fx-prompt-text-fill: #999999;
+                            -fx-text-fill: #333333;
+                            -fx-padding: 0;
+                        "/>
+
+            </StackPane>
+
+            <!-- Botón ojo -->
+            <Label
+
+                    fx:id="iconoOjo"
+
+                    text="👁"
+
+                    onMouseClicked="#alternarVistaPassword"
+
+                    style="
+                        -fx-font-size: 16;
+                        -fx-text-fill: #808080;
+                    ">
+
+                <cursor>
+                    <Cursor fx:constant="HAND"/>
+                </cursor>
+
+            </Label>
+
+        </HBox>
+
+        <!-- Espacio -->
+        <Region prefHeight="10"/>
+
+        <!-- ========================================================= -->
+        <!-- BOTÓN LOGIN -->
+        <!-- ========================================================= -->
+
+        <Button
+
+                text="INICIAR SESIÓN"
+
+                onAction="#iniciarSesion"
+
+                maxWidth="Infinity"
+
+                style="
+                    -fx-background-color: #e3000f;
+                    -fx-text-fill: white;
+
+                    -fx-background-radius: 25;
+
+                    -fx-font-weight: bold;
+                    -fx-font-size: 14;
+
+                    -fx-padding: 12;
+                ">
+
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+
+        </Button>
+
+        <!-- ========================================================= -->
+        <!-- OPCIONES EXTRA -->
+        <!-- ========================================================= -->
+
+        <VBox
+
+                alignment="CENTER"
+
+                spacing="15"
+
+                style="
+                    -fx-padding: 10 0 0 0;
+                ">
+
+            <!-- Recuperar contraseña -->
+            <Label
+
+                    text="¿Olvidaste tu contraseña?"
+
+                    onMouseClicked="#irAForgotPassword"
+
+                    style="
+                        -fx-font-size: 12;
+                        -fx-text-fill: #999999;
+                    ">
+
+                <cursor>
+                    <Cursor fx:constant="HAND"/>
+                </cursor>
+
+            </Label>
+
+            <!-- Registro -->
+            <Label
+
+                    text="Registrarse"
+
+                    onMouseClicked="#irARegistro"
+
+                    style="
+                        -fx-font-size: 13;
+                        -fx-text-fill: #999999;
+                    ">
+
+                <cursor>
+                    <Cursor fx:constant="HAND"/>
+                </cursor>
+
+            </Label>
+
+        </VBox>
+
+    </VBox>
+
+</StackPane>

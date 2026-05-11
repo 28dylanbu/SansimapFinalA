@@ -1,0 +1,298 @@
+#AULA
+codigo:607
+ubicacion:
+piso:
+edificio:607_edif
+fotos:607_aula.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:612
+ubicacion:
+piso:
+edificio:612_edif
+fotos:612_aula.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:617
+ubicacion:
+piso:
+edificio:617_edif
+fotos:617_aula.jpg,617_int.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:617A
+ubicacion:
+piso:
+edificio:617_edif
+fotos:617A_aula.jpg,617A_int.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:617B
+ubicacion:
+piso:
+edificio:617_edif
+fotos:617B_aula.jpg,617B_int.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:622
+ubicacion:
+piso:
+edificio:622_edif
+fotos:622_aula.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:623
+ubicacion:
+piso:
+edificio:623_edif
+fotos:623_aula.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:624
+ubicacion:
+piso:
+edificio:624_edif
+fotos:624_aula.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:642
+ubicacion:
+piso:
+edificio:642_edif
+fotos:642_aula.jpg,642_int.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:651
+ubicacion:
+piso:
+edificio:
+fotos:651_aula.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:652
+ubicacion:
+piso:
+edificio:
+fotos:652_aula.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:680J
+ubicacion:
+piso:
+edificio:
+fotos:680J_aula.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:690A
+ubicacion:Edificio 690
+piso:Planta baja
+edificio:690_edif
+fotos:690A_aula.jpg,690A_int.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:692B
+ubicacion:Edificio Academico
+piso:2do piso
+edificio:690_edif
+fotos:692B_aula.jpg
+ubicacionfoto:690_ubi.png    
+horarios:
+#FIN
+
+#AULA
+codigo:690C
+ubicacion:Edificio 690
+piso:Planta baja
+edificio:690_edif
+fotos:690C_aula.jpg,690C_int.png
+horarios:
+#FIN
+
+#AULA
+codigo:690D
+ubicacion:Edificio 690
+piso:Planta baja
+edificio:690_edif
+fotos:690D_aula.jpg,690D_int.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:691A
+ubicacion:Edificio 690
+piso:1er piso
+edificio:690_edif
+fotos:691A_aula.jpg,691A_int.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:691B
+ubicacion:Edificio 690
+piso:1er piso
+edificio:690_edif
+fotos:691B_aula.jpg,691B_int.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:691C
+ubicacion:Edificio 690
+piso:1er piso
+edificio:690_edif
+fotos:691C_aula.jpg,691C_int.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:691D
+ubicacion:Edificio Academico
+piso:1er piso
+edificio:690_edif
+fotos:691D_aula.jpg,691D_int.jpg
+ubicacionfoto:690_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:691EF
+ubicacion:Edificio 690
+piso:1er piso
+edificio:690_edif
+fotos:691EF_aula.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:692A
+ubicacion:Edificio 690
+piso:2do piso
+edificio:690_edif
+fotos:692A_aula.jpg,692A_int.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:692B
+ubicacion:Edificio 690
+piso:2do piso
+edificio:690_edif
+fotos:692B_aula.jpg,692B_int.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:692C
+ubicacion:Edificio 690
+piso:2do piso
+edificio:690_edif
+fotos:692C_aula.jpg,692C_int.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:692D
+ubicacion:Edificio 690
+piso:2do piso
+edificio:690_edif
+fotos:692D_aula.jpg,692D_int.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:692E
+ubicacion:Edificio 690
+piso:2do piso
+edificio:690_edif
+fotos:692E_aula.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:692F
+ubicacion:Edificio 690
+piso:2do piso
+edificio:690_edif
+fotos:692F_aula.jpg,692F_int.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:692G
+ubicacion:Edificio 690
+piso:2do piso
+edificio:690_edif
+fotos:692G_aula.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:692H
+ubicacion:Edificio 690
+piso:2do piso
+edificio:690_edif
+fotos:692H_aula.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:693A
+ubicacion:Edificio 690
+piso:3er piso
+edificio:690_edif
+fotos:693A_aula.jpg,693A_int.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:693B
+ubicacion:Edificio 690
+piso:3er piso
+edificio:690_edif
+fotos:693B_aula.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:693C
+ubicacion:Edificio 690
+piso:3er piso
+edificio:690_edif
+fotos:693C_aula.jpg
+horarios:
+#FIN
+
+#AULA
+codigo:693D
+ubicacion:Edificio 690
+piso:3er piso
+edificio:690_edif
+fotos:693D_aula.jpg,693D_int.jpg
+horarios:
+#FIN

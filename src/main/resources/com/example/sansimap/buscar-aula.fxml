@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Importaciones de componentes JavaFX -->
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+
+<!--
+Ventana para buscar aulas.
+Permite ingresar el número o código de un aula.
+-->
+
+<BorderPane
+        xmlns:fx="http://javafx.com/fxml"
+
+        fx:controller=
+                "com.example.sansimap.BuscarAulaController"
+
+        style="
+            -fx-background-color:
+            linear-gradient(to bottom, #0a1f44, #123a7a);
+        ">
+
+    <!-- ===== PANEL IZQUIERDO ===== -->
+    <left>
+
+        <!-- Barra lateral -->
+        <VBox
+                spacing="15"
+
+                prefWidth="260"
+
+                style="
+                    -fx-background-color: white;
+                    -fx-padding: 25;
+                    -fx-background-radius: 0 20 20 0;
+                ">
+
+            <!-- Botón para volver al menú -->
+            <Button
+                    text="← Volver"
+
+                    onAction="#volverMenu"
+
+                    style="
+                        -fx-background-color: #6c757d;
+                        -fx-text-fill: white;
+                    "/>
+
+            <!-- Título -->
+            <Label
+                    text="Buscar Aula"
+
+                    style="
+                        -fx-font-size: 18px;
+                        -fx-font-weight: bold;
+                        -fx-text-fill: #0a1f44;
+                    "/>
+
+            <!-- Campo para ingresar aula -->
+            <TextField
+                    fx:id="inputAula"
+
+                    promptText="Ej: 101"
+
+                    onAction="#buscarAula"
+
+                    style="
+                        -fx-font-size: 14px;
+                    "/>
+
+            <!-- Botón de búsqueda -->
+            <Button
+                    text="Buscar"
+
+                    onAction="#buscarAula"
+
+                    style="
+                        -fx-background-color: #d62828;
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                    "/>
+
+        </VBox>
+    </left>
+
+</BorderPane>

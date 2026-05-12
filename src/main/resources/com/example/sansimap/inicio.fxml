@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- Importaciones de componentes JavaFX -->
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.*?>
@@ -7,7 +8,11 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.shape.Rectangle?>
 
-<!-- Pantalla principal de SansiMap -->
+<!--
+Ventana de Inicio de SansiMap
+Muestra los botónes e imágenes correspondientes a esta parte INICIAL
+-->
+
 <StackPane
         style="-fx-background-color: #ffffff;"
         xmlns="http://javafx.com/javafx/21"
@@ -17,20 +22,21 @@
     <!-- Contenido principal desplazable -->
     <VBox>
 
-        <!-- Barra superior -->
+        <!-- Barra superior COLOR BLANCO-->
         <HBox alignment="CENTER_LEFT"
               style="-fx-background-color: #ffffff; -fx-padding: 10 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
 
-            <!-- Botón para abrir/cerrar el menú lateral -->
+            <!-- Botón en la Barra Superior para abrir/cerrar el menú lateral -->
             <Button text="☰ Menú"
                     onAction="#toggleMenu"
                     style="-fx-font-family: 'Century Gothic'; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: transparent; -fx-text-fill: #0a1f44;">
+                <!-- Indicador de poder hacer click -->
                 <cursor>
                     <Cursor fx:constant="HAND"/>
                 </cursor>
             </Button>
 
-            <!-- Espaciador -->
+            <!-- Espaciador(Espacio entre el botón y el texto superior) -->
             <Region HBox.hgrow="ALWAYS"/>
 
             <!-- Texto superior -->
@@ -38,7 +44,7 @@
                    style="-fx-font-family: 'Candara'; -fx-text-fill: #0a1f44; -fx-font-weight: bold; -fx-font-size: 14px;"/>
         </HBox>
 
-        <!-- Scroll principal de toda la página -->
+        <!-- Deslizador "Scroll" principal de toda la página(ARRIBA-ABAJO) -->
         <ScrollPane fx:id="scrollPrincipal"
                     fitToWidth="true"
                     style="-fx-background-color: #ffffff; -fx-border-color: transparent;"
@@ -46,25 +52,26 @@
 
             <VBox style="-fx-background-color: #ffffff;" spacing="0">
 
-                <!-- Sección hero -->
+                <!-- Sección Principal -->
                 <VBox alignment="CENTER"
                       spacing="25"
                       style="-fx-background-image: url('fondo.jpeg'); -fx-background-size: cover; -fx-background-color: linear-gradient(to bottom right, rgba(10,31,68,0.95), rgba(214,40,40,0.95)); -fx-background-blend-mode: multiply; -fx-padding: 80 40;">
 
-                    <!-- Logo animado -->
+                    <!-- Logo con Entrada Animada -->
                     <StackPane fx:id="iconoAnimado"
                                style="-fx-max-width: 80; -fx-max-height: 80; -fx-background-radius: 20; -fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 15, 0, 0, 5);">
-                        <ImageView fitWidth="75" fitHeight="75" preserveRatio="false">
+                        <ImageView fitWidth="86" fitHeight="86" preserveRatio="false">
                             <image>
                                 <Image url="@logo.jpeg" />
                             </image>
+                            <!-- Marco que sostiene la imágen -->
                             <clip>
-                                <Rectangle width="75" height="75" arcWidth="20" arcHeight="20"/>
+                                <Rectangle width="85" height="85" arcWidth="60" arcHeight="50"/>
                             </clip>
                         </ImageView>
                     </StackPane>
 
-                    <!-- Títulos animados -->
+                    <!-- Títulos Principales con animación de Entrada -->
                     <VBox alignment="CENTER" spacing="10">
                         <Label fx:id="tituloAnimado"
                                text="SANSI MAP"
@@ -77,11 +84,12 @@
                                style="-fx-font-family: 'Candara'; -fx-font-size: 16px; -fx-text-fill: rgba(255, 255, 255, 0.85);"/>
                     </VBox>
 
-                    <!-- Botón principal -->
+                    <!-- Botón principal de Inició de Sesión o Registro -->
                     <HBox fx:id="botonesAnimados" alignment="CENTER" spacing="20">
                         <Button text="Iniciar"
                                 onAction="#cambiarALogin"
                                 style="-fx-font-family: 'Century Gothic'; -fx-background-color: white; -fx-text-fill: #0a1f44; -fx-background-radius: 30; -fx-font-weight: bold; -fx-padding: 12 35; -fx-font-size: 15px;">
+                            <!-- Indicador de poder hacer click -->
                             <cursor>
                                 <Cursor fx:constant="HAND"/>
                             </cursor>
@@ -90,7 +98,7 @@
 
                     <!-- Tarjetas de estadísticas -->
                     <HBox fx:id="statsAnimados" alignment="CENTER" spacing="20">
-                        <!-- CORRECCIÓN: aquí debe ser HBox.margin, no VBox.margin -->
+                        <!-- Tamaño de una sección -->
                         <HBox.margin>
                             <Insets top="40"/>
                         </HBox.margin>
@@ -121,6 +129,7 @@
                     <Label text="Explora el mapa general de la Facultad de Tecnología UMSS con todos los edificios y espacios académicos" style="-fx-font-family: 'Candara'; -fx-text-fill: #555555; -fx-font-size: 16px; -fx-padding: 0 0 30 0;"/>
 
                     <HBox spacing="30" alignment="TOP_CENTER">
+                        <!-- Espacio Interno donde estarán el mapa y la barra de búsqueda rápida -->
                         <padding>
                             <Insets left="40" right="40" bottom="20"/>
                         </padding>
@@ -129,13 +138,13 @@
                                    HBox.hgrow="ALWAYS"
                                    style="-fx-background-color: #f4f7f8; -fx-border-color: #0a1f44; -fx-border-width: 2; -fx-background-radius: 15; -fx-border-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 15, 0, 0, 8);">
                             <Label text="Si ves esto, la ruta de mapa.png está mal escrita" style="-fx-font-family: 'Candara'; -fx-text-fill: #d62828;"/>
-                            <ImageView fitWidth="600" preserveRatio="true">
+                            <ImageView fitWidth="900" preserveRatio="true">
                                 <image>
                                     <Image url="@mapa.png" />
                                 </image>
                             </ImageView>
                         </StackPane>
-
+                        <!-- Barra Lateral Derecha de Búsqueda Rápida -->
                         <VBox spacing="20" minWidth="300" maxWidth="350">
 
                             <VBox spacing="10"
@@ -152,7 +161,7 @@
                                     </Button>
                                 </HBox>
                             </VBox>
-
+                            <!-- Barra Lateral Derecha de Edificios (Sugerencias) -->
                             <VBox spacing="12"
                                   style="-fx-background-color: #0a1f44; -fx-padding: 25; -fx-background-radius: 12; -fx-effect: dropshadow(three-pass-box, rgba(10,31,68,0.4), 10, 0, 0, 5);">
                                 <Label text="Edificios" style="-fx-font-family: 'Century Gothic'; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-size: 18px;"/>
@@ -170,7 +179,7 @@
                     </HBox>
                 </VBox>
 
-                <!-- Sección de características -->
+                <!-- Sección de características principales -->
                 <VBox alignment="CENTER" spacing="30" style="-fx-padding: 60 40; -fx-background-color: #f4f7f8;">
                     <VBox alignment="CENTER" spacing="5">
                         <Label text="⚡ Características" style="-fx-font-family: 'Century Gothic'; -fx-text-fill: #d62828; -fx-font-weight: bold; -fx-font-size: 14px; -fx-letter-spacing: 1px;"/>
@@ -239,15 +248,17 @@
                     </HBox>
                 </VBox>
 
-                <!-- Sección descriptiva final -->
+                <!-- Sección informativa final
+                     SECTOR: ¿Por qué SANSI MAP?
+                 -->
                 <VBox style="-fx-background-color: linear-gradient(to bottom right, #051433, #d62828); -fx-padding: 80 80 40 80;" spacing="60">
                     <HBox spacing="50" alignment="CENTER">
                         <StackPane fx:id="celularContenedor"
-                                   prefWidth="350"
+                                   prefWidth="300"
                                    prefHeight="500"
                                    HBox.hgrow="NEVER"
                                    style="-fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 20, 0, 0, 10);">
-                            <ImageView fitWidth="350" fitHeight="500" preserveRatio="false">
+                            <ImageView fitWidth="300" fitHeight="500" >
                                 <image>
                                     <Image url="@mano.jpg" />
                                 </image>
@@ -269,13 +280,13 @@
                                 <HBox spacing="10"><Label text="✔" style="-fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 50; -fx-padding: 0 4; -fx-font-size: 10px;"/><Label text="Interfaz web accesible desde cualquier dispositivo" style="-fx-font-family: 'Candara'; -fx-font-size: 15px; -fx-text-fill: white;"/></HBox>
                                 <HBox spacing="10"><Label text="✔" style="-fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 50; -fx-padding: 0 4; -fx-font-size: 10px;"/><Label text="Sistema desarrollado para estudiantes UMSS" style="-fx-font-family: 'Candara'; -fx-font-size: 15px; -fx-text-fill: white;"/></HBox>
                             </VBox>
-
+                            <!-- Comentario de Recomendación -->
                             <VBox style="-fx-background-color: rgba(255,255,255,0.1); -fx-border-color: rgba(255,255,255,0.2); -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 15;">
                                 <Label text="&quot;Una herramienta imprescindible para cualquier miembro de la comunidad universitaria UMSS&quot;" style="-fx-font-family: 'Candara'; -fx-font-size: 14px; -fx-text-fill: rgba(255,255,255,0.9); -fx-font-style: italic; -fx-wrap-text: true;"/>
                             </VBox>
                         </VBox>
                     </HBox>
-
+                    <!-- Sección de Navegación Visual(Descripción) -->
                     <VBox alignment="CENTER" fillWidth="false" spacing="0">
                         <padding>
                             <Insets top="40" bottom="60"/>
@@ -307,8 +318,15 @@
                 <VBox style="-fx-background-color: #0a1f44; -fx-padding: 40 80;" spacing="30">
                     <HBox spacing="150">
                         <VBox spacing="10">
+                            <!-- MODIFICACIÓN: Imagen de pinche en el título del pie de página -->
                             <HBox spacing="10" alignment="CENTER_LEFT">
-                                <Label text="📍" style="-fx-text-fill: #d62828; -fx-font-size: 18px; -fx-background-color: white; -fx-background-radius: 50; -fx-padding: 2 6;"/>
+                                <StackPane style="-fx-background-color: white; -fx-background-radius: 50; -fx-padding: 5;">
+                                    <ImageView fitWidth="20" fitHeight="20" preserveRatio="true">
+                                        <image>
+                                            <Image url="@logo.jpeg" />
+                                        </image>
+                                    </ImageView>
+                                </StackPane>
                                 <Label text="SANSI MAP" style="-fx-font-family: 'Century Gothic'; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 18px;"/>
                             </HBox>
                             <Label text="La aplicación oficial de navegación del campus de la Universidad Mayor de San Simón." style="-fx-font-family: 'Candara'; -fx-text-fill: rgba(255,255,255,0.6); -fx-font-size: 13px;"/>
@@ -316,8 +334,13 @@
 
                         <VBox spacing="10">
                             <Label text="Contacto" style="-fx-font-family: 'Century Gothic'; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;"/>
-                            <HBox spacing="5">
-                                <Label text="📍" style="-fx-text-fill: #d62828;"/>
+                            <!-- MODIFICACIÓN: Imagen de pinche en la sección de contacto -->
+                            <HBox spacing="5" alignment="CENTER_LEFT">
+                                <ImageView fitWidth="30" fitHeight="30" preserveRatio="true">
+                                    <image>
+                                        <Image url="@umss.png" />
+                                    </image>
+                                </ImageView>
                                 <Label text="Universidad Mayor de San Simón&#10;Cochabamba, Bolivia" style="-fx-font-family: 'Candara'; -fx-text-fill: rgba(255,255,255,0.6); -fx-font-size: 13px;"/>
                             </HBox>
                         </VBox>
@@ -346,10 +369,15 @@
           translateX="-300"
           spacing="15"
           style="-fx-background-color: #0a1f44; -fx-padding: 30 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.7), 30, 0, 5, 0);">
-
+        <!-- Barra de Logo Umss,título y botón de repliegue de la barra lateral -->
         <HBox alignment="CENTER_LEFT" spacing="15">
+
             <StackPane style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 5;">
-                <Label text="📍" style="-fx-text-fill: #d62828; -fx-font-size: 24px;"/>
+                <ImageView fitWidth="40" fitHeight="40" preserveRatio="true">
+                    <image>
+                        <Image url="@umss.png" />
+                    </image>
+                </ImageView>
             </StackPane>
             <VBox>
                 <Label text="UMSS" style="-fx-font-family: 'Century Gothic'; -fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;"/>

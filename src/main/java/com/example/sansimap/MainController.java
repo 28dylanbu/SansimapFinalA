@@ -154,7 +154,6 @@ public class MainController {
             // Obtiene la ventana (Stage) actual donde ocurrió el click
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            // ===== CORRECCIÓN IMPORTANTE =====
             // Guarda el tamaño actual de la ventana antes del cambio
             double anchoActual = stage.getWidth();
             double altoActual = stage.getHeight();

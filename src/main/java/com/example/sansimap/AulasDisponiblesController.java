@@ -65,34 +65,8 @@ public class AulasDisponiblesController {
 
     // Método para volver al menú principal
     @FXML
-    private void volverMenu() {
+    private void volverMenu(javafx.event.ActionEvent event) {
+        CambiarVista.cambiarContenidoVista(event,"main-view.fxml");
 
-        try {
-
-            // Obtiene la ventana actual
-            Stage stage = (Stage) listaAulas.getScene().getWindow();
-
-            // Guarda el tamaño actual de la ventana
-            double ancho = stage.getWidth();
-            double alto = stage.getHeight();
-
-            // Carga el archivo FXML del menú principal
-            FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("main-view.fxml")
-            );
-
-            // Cambia la escena actual
-            stage.setScene(new Scene(loader.load()));
-
-            // Recupera el tamaño anterior
-            // para evitar cambios bruscos de tamaño
-            stage.setWidth(ancho);
-            stage.setHeight(alto);
-
-        } catch (Exception e) {
-
-            // Muestra errores en consola
-            e.printStackTrace();
-        }
     }
 }

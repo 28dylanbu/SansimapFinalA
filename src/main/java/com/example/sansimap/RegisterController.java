@@ -95,10 +95,7 @@ public class RegisterController {
     @FXML
     public void volverAlLogin(MouseEvent event) throws IOException {
         // Cargamos la vista de login de vuelta
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
-        Parent root = loader.load();
-        Scene escenaActual = ((Node) (event.getSource())).getScene();
-        escenaActual.setRoot(root);
+        CambiarVista.cambiarContenidoVista(event, "hello-view.fxml");
     }
     @FXML
     public void irAVerificacionCorreo(javafx.event.ActionEvent event) throws IOException {

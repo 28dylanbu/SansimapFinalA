@@ -21,7 +21,7 @@ public class BuscarAulaController {
 
     // Método que se ejecuta al presionar el botón buscar
     @FXML
-    private void buscarAula() {
+    private void buscarAula(javafx.event.ActionEvent event) {
 
         // Obtiene el texto ingresado por el usuario
         String aula = inputAula.getText();
@@ -34,41 +34,8 @@ public class BuscarAulaController {
             return;
         }
 
-        try {
-
-            // Obtiene la ventana actual
-            Stage stage = (Stage) inputAula.getScene().getWindow();
-
-            // Guarda el tamaño actual de la ventana
-            double ancho = stage.getWidth();
-            double alto = stage.getHeight();
-
-            // Carga el archivo FXML de resultados
-            FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("resultado-aula.fxml")
-            );
-
-            // Carga la interfaz
-            Parent root = loader.load();
-
-            // Obtiene el controller de la ventana resultado
-            ResultadoAulaController controller = loader.getController();
-
-            // Envía el aula ingresada al otro controller
-            controller.setDatos(aula);
-
-            // Cambia la escena actual
-            stage.setScene(new Scene(root));
-
-            // Mantiene el tamaño anterior de la ventana
-            stage.setWidth(ancho);
-            stage.setHeight(alto);
-
-        } catch (Exception e) {
-
-            // Muestra errores en consola
-            e.printStackTrace();
-        }
+        // Clase genérica (CambiarVista.java) para no repetir código de carga de FXML
+        CambiarVista.cambiarContenidoVista(event,"resultado-aula.fxml");
     }
 
     // Método para volver al menú principal

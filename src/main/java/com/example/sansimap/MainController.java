@@ -4,7 +4,7 @@ package com.example.sansimap;
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 
-// Importaciones principales del sistema JavaFX
+// Importaciones  principales del sistema JavaFX
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

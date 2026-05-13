@@ -34,7 +34,5 @@ public class CambiarVista {
             System.err.println("Error al cargar la vista: " + fxml);
         }
     }
-    public static void cambiarContenidoVista(String fxml){
 
-    }
 }

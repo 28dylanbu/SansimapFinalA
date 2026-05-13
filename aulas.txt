@@ -1,145 +1,500 @@
 #AULA
 codigo:607
-ubicacion:
+ubicacion:Edificio 607
 piso:
 edificio:607_edif
 fotos:607_aula.jpg
+ubicacionfoto:607_ubi.png
 horarios:
 #FIN
 
 #AULA
 codigo:612
-ubicacion:
+ubicacion:Edificio 612
 piso:
 edificio:612_edif
 fotos:612_aula.jpg
+ubicacionfoto:612_ubi.png
 horarios:
 #FIN
 
 #AULA
 codigo:617
-ubicacion:
+ubicacion:Edificio 617
 piso:
 edificio:617_edif
 fotos:617_aula.jpg,617_int.jpg
+ubicacionfoto:617_ubi.png
 horarios:
 #FIN
 
 #AULA
 codigo:617A
-ubicacion:
+ubicacion:Edificio 617
 piso:
 edificio:617_edif
 fotos:617A_aula.jpg,617A_int.jpg
+ubicacionfoto:617_ubi.png
 horarios:
 #FIN
 
 #AULA
 codigo:617B
-ubicacion:
+ubicacion:Edificio 617
 piso:
 edificio:617_edif
 fotos:617B_aula.jpg,617B_int.jpg
+ubicacionfoto:617_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:618
+ubicacion:Edificio 618
+piso:
+edificio:620_edif
+fotos:618_aula.jpg
+ubicacionfoto:620_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:620
+ubicacion:Edificio 618
+piso:
+edificio:620_edif
+fotos:620_aula.jpg
+ubicacionfoto:620_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:621
+ubicacion:Edificio 618
+piso:
+edificio:620_edif
+fotos:621_aula.jpg
+ubicacionfoto:620_ubi.png
 horarios:
 #FIN
 
 #AULA
 codigo:622
-ubicacion:
+ubicacion:Edificio 622
 piso:
 edificio:622_edif
-fotos:622_aula.jpg
+fotos:622_aula.jpg,622_int.jpg
+ubicacionfoto:622_ubi.png
 horarios:
 #FIN
 
 #AULA
 codigo:623
-ubicacion:
+ubicacion:Edificio 623
 piso:
 edificio:623_edif
-fotos:623_aula.jpg
+fotos:623_aula.jpg,623_int.jpg
+ubicacionfoto:623_ubi.png
 horarios:
 #FIN
 
 #AULA
 codigo:624
-ubicacion:
+ubicacion:Edificio 624
 piso:
 edificio:624_edif
-fotos:624_aula.jpg
+fotos:624_int.jpg
+ubicacionfoto:624_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:625C
+ubicacion:Edificio 625
+piso:
+edificio:625_edif
+fotos:625C_aula.jpg
+ubicacionfoto:625_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:625D
+ubicacion:Edificio 625
+piso:
+edificio:625_edif
+fotos:625D_aula.jpg
+ubicacionfoto:625_ubi.png
 horarios:
 #FIN
 
 #AULA
 codigo:642
-ubicacion:
+ubicacion:Edificio 642
 piso:
 edificio:642_edif
 fotos:642_aula.jpg,642_int.jpg
+ubicacionfoto:642_ubi.png
 horarios:
 #FIN
 
 #AULA
 codigo:651
-ubicacion:
+ubicacion:Edificio 651
 piso:
-edificio:
+edificio:651_edif
 fotos:651_aula.jpg
+ubicacionfoto:651_ubi.png
 horarios:
 #FIN
 
 #AULA
 codigo:652
-ubicacion:
+ubicacion:Edificio 651
 piso:
-edificio:
+edificio:651_edif
 fotos:652_aula.jpg
+ubicacionfoto:651_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:660
+ubicacion:Edificio 660
+piso:
+edificio:660_edif
+fotos:660_aula.jpg
+ubicacionfoto:660_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:661
+ubicacion:Edificio 660
+piso:
+edificio:660_edif
+fotos:661_aula.jpg
+ubicacionfoto:660_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:680B
+ubicacion:Edificio 680
+piso:planta baja
+edificio:680_edif
+fotos:680B_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:680G
+ubicacion:Edificio 680
+piso:planta baja
+edificio:680_edif
+fotos:680G_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:680I
+ubicacion:Edificio 680
+piso:planta baja
+edificio:680_edif
+fotos:680I_aula.jpg
+ubicacionfoto:680_ubi.png
 horarios:
 #FIN
 
 #AULA
 codigo:680J
-ubicacion:
-piso:
-edificio:
+ubicacion:Edificio 680
+piso:planta baja
+edificio:680_edif
 fotos:680J_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:680L
+ubicacion:Edificio 680
+piso:planta baja
+edificio:680_edif
+fotos:680L_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:681A
+ubicacion:Edificio 680
+piso:1er piso
+edificio:680_edif
+fotos:681A_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:681F
+ubicacion:Edificio 680
+piso:1er piso
+edificio:680_edif
+fotos:681F_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:681K
+ubicacion:Edificio 680
+piso:1er piso
+edificio:680_edif
+fotos:681K_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:608A
+ubicacion:Edificio 680
+piso:3er piso
+edificio:680_edif
+fotos:608A_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:608B
+ubicacion:Edificio 680
+piso:3er piso
+edificio:680_edif
+fotos:608B_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:609
+ubicacion:Edificio 680
+piso:3er piso
+edificio:680_edif
+fotos:609_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:609A
+ubicacion:Edificio 680
+piso:3er piso
+edificio:680_edif
+fotos:609A_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:682B
+ubicacion:Edificio 680
+piso:2do piso
+edificio:680_edif
+fotos:682B_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:682D
+ubicacion:Edificio 680
+piso:2do piso
+edificio:680_edif
+fotos:682D_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:682J
+ubicacion:Edificio 680
+piso:2do piso
+edificio:680_edif
+fotos:682J_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:682L2
+ubicacion:Edificio 680
+piso:2do piso
+edificio:680_edif
+fotos:682L2_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:682L3
+ubicacion:Edificio 680
+piso:2do piso
+edificio:680_edif
+fotos:682L3_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:682L4
+ubicacion:Edificio 680
+piso:2do piso
+edificio:680_edif
+fotos:682L4_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:682L8
+ubicacion:Edificio 680
+piso:2do piso
+edificio:680_edif
+fotos:682L8.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:683F
+ubicacion:Edificio 680
+piso:3er piso
+edificio:680_edif
+fotos:683F_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:683G
+ubicacion:Edificio 680
+piso:3er piso
+edificio:680_edif
+fotos:683G_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:683J
+ubicacion:Edificio 680
+piso:3er piso
+edificio:680_edif
+fotos:683J_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:683L
+ubicacion:Edificio 680
+piso:3er piso
+edificio:680_edif
+fotos:683L_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:684B
+ubicacion:Edificio 680
+piso:4to piso
+edificio:680_edif
+fotos:684B_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:684L0
+ubicacion:Edificio 680
+piso:4to piso
+edificio:680_edif
+fotos:684L0_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:684L6
+ubicacion:Edificio 680
+piso:4to piso
+edificio:680_edif
+fotos:684L6_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:684L7
+ubicacion:Edificio 680
+piso:4to piso
+edificio:680_edif
+fotos:684L7_aula.jpg
+ubicacionfoto:680_ubi.png
+horarios:
+#FIN
+
+#AULA
+codigo:684L8
+ubicacion:Edificio 680
+piso:4to piso
+edificio:680_edif
+fotos:684L8_aula.jpg
+ubicacionfoto:680_ubi.png
 horarios:
 #FIN
 
 #AULA
 codigo:690A
 ubicacion:Edificio 690
-piso:Planta baja
+piso:planta baja
 edificio:690_edif
-fotos:690A_aula.jpg,690A_int.jpg
+fotos:690A_aula.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN
 
 #AULA
-codigo:692B
-ubicacion:Edificio Academico
-piso:2do piso
+codigo:690B
+ubicacion:Edificio 690
+piso:planta baja
 edificio:690_edif
-fotos:692B_aula.jpg
-ubicacionfoto:690_ubi.png    
+fotos:690B_aula.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN
 
 #AULA
 codigo:690C
 ubicacion:Edificio 690
-piso:Planta baja
+piso:planta baja
 edificio:690_edif
-fotos:690C_aula.jpg,690C_int.png
+fotos:690C_aula.jpg,690C_int.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN
 
 #AULA
 codigo:690D
 ubicacion:Edificio 690
-piso:Planta baja
+piso:planta baja
 edificio:690_edif
 fotos:690D_aula.jpg,690D_int.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN
 
@@ -148,7 +503,8 @@ codigo:691A
 ubicacion:Edificio 690
 piso:1er piso
 edificio:690_edif
-fotos:691A_aula.jpg,691A_int.jpg
+fotos:691A_aula.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN
 
@@ -157,7 +513,8 @@ codigo:691B
 ubicacion:Edificio 690
 piso:1er piso
 edificio:690_edif
-fotos:691B_aula.jpg,691B_int.jpg
+fotos:691B_aula.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN
 
@@ -167,6 +524,7 @@ ubicacion:Edificio 690
 piso:1er piso
 edificio:690_edif
 fotos:691C_aula.jpg,691C_int.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN
 
@@ -186,6 +544,7 @@ ubicacion:Edificio 690
 piso:1er piso
 edificio:690_edif
 fotos:691EF_aula.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN
 
@@ -195,15 +554,17 @@ ubicacion:Edificio 690
 piso:2do piso
 edificio:690_edif
 fotos:692A_aula.jpg,692A_int.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN
 
 #AULA
 codigo:692B
-ubicacion:Edificio 690
+ubicacion:Edificio Academico
 piso:2do piso
 edificio:690_edif
-fotos:692B_aula.jpg,692B_int.jpg
+fotos:692B_aula.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN
 
@@ -213,6 +574,7 @@ ubicacion:Edificio 690
 piso:2do piso
 edificio:690_edif
 fotos:692C_aula.jpg,692C_int.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN
 
@@ -222,6 +584,7 @@ ubicacion:Edificio 690
 piso:2do piso
 edificio:690_edif
 fotos:692D_aula.jpg,692D_int.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN
 
@@ -231,6 +594,7 @@ ubicacion:Edificio 690
 piso:2do piso
 edificio:690_edif
 fotos:692E_aula.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN
 
@@ -240,6 +604,7 @@ ubicacion:Edificio 690
 piso:2do piso
 edificio:690_edif
 fotos:692F_aula.jpg,692F_int.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN
 
@@ -249,6 +614,7 @@ ubicacion:Edificio 690
 piso:2do piso
 edificio:690_edif
 fotos:692G_aula.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN
 
@@ -258,6 +624,7 @@ ubicacion:Edificio 690
 piso:2do piso
 edificio:690_edif
 fotos:692H_aula.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN
 
@@ -267,6 +634,7 @@ ubicacion:Edificio 690
 piso:3er piso
 edificio:690_edif
 fotos:693A_aula.jpg,693A_int.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN
 
@@ -276,6 +644,7 @@ ubicacion:Edificio 690
 piso:3er piso
 edificio:690_edif
 fotos:693B_aula.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN
 
@@ -285,6 +654,7 @@ ubicacion:Edificio 690
 piso:3er piso
 edificio:690_edif
 fotos:693C_aula.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN
 
@@ -294,5 +664,6 @@ ubicacion:Edificio 690
 piso:3er piso
 edificio:690_edif
 fotos:693D_aula.jpg,693D_int.jpg
+ubicacionfoto:690_ubi.png
 horarios:
 #FIN

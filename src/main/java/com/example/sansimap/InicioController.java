@@ -34,7 +34,7 @@ public class InicioController {
 
     private boolean menuAbierto = false;
     private final Set<Node> nodosAnimados = new HashSet<>();
-
+//XD
     @FXML
     public void initialize() {
         // Carga del mapa

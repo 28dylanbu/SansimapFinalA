@@ -32,7 +32,7 @@
                text="Te enviamos un correo para confirmar que eres tú. Revisa tu bandeja de entrada (y la carpeta de spam por si las dudas) e introduce el código para empezar." />
         <Region prefHeight="5" />
 
-        <Button onAction="#verificarCodigoIngresado" maxWidth="Infinity" style="-fx-background-color: #e3000f; -fx-text-fill: white; -fx-background-radius: 25; -fx-font-weight: bold; -fx-font-size: 14; -fx-padding: 12;" text="Verificar correo">
+        <Button defaultButton="true" onAction="#verificarCodigoIngresado" maxWidth="Infinity" style="-fx-background-color: #e3000f; -fx-text-fill: white; -fx-background-radius: 25; -fx-font-weight: bold; -fx-font-size: 14; -fx-padding: 12;" text="Verificar correo">
             <cursor><Cursor fx:constant="HAND" /></cursor>
         </Button>
 

@@ -12,6 +12,7 @@ module com.example.sansimap {
 
     // Librerías de escritorio de Java
     requires java.desktop;
+    requires javafx.web;
 
     // Permite que JavaFX acceda a los controladores FXML
     opens com.example.sansimap to javafx.fxml;

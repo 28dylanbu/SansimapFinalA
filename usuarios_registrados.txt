@@ -4,3 +4,4 @@ max|henryomarurquidialvarez@gmail.com|12345
 Carlos|202500304@est.umss.edu|1234567890
 Carlos Oliver|arcanimateo2@gmail.com|12345
 usuario|usuario|12345
+Dylan|dylanota65azu@gmail.com|12345

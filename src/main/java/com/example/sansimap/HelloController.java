@@ -77,16 +77,8 @@ public class HelloController {
         // 2. Verificar si las credenciales son correctas
         if (ManejadorUsuarios.validarCredenciales(usuario, pass)) {
 
-
-            Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-            alerta.setTitle("¡Bienvenido!");
-            alerta.setHeaderText(null);
-            alerta.setContentText("Inicio de sesión exitoso. ¡Bienvenido de vuelta a Sansi Map!");
-            alerta.showAndWait();
-
             //Abrir Mapa
             CambiarVista.cambiarContenidoVista(event, "main-view.fxml");
-
 
         } else {
 

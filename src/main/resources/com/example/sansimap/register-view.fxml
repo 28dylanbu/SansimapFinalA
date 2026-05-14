@@ -61,8 +61,8 @@
         </HBox>
 
         <Region prefHeight="5" />
-
-        <Button onAction="#irAVerificacionCorreo" maxWidth="Infinity" style="-fx-background-color: #e3000f; -fx-text-fill: white; -fx-background-radius: 25; -fx-font-weight: bold; -fx-font-size: 14; -fx-padding: 12;" text="REGISTRARSE">
+        <!--Boton de registrarse-->
+        <Button defaultButton="true" onAction="#irAVerificacionCorreo" maxWidth="Infinity" style="-fx-background-color: #e3000f; -fx-text-fill: white; -fx-background-radius: 25; -fx-font-weight: bold; -fx-font-size: 14; -fx-padding: 12;" text="REGISTRARSE">
             <cursor><Cursor fx:constant="HAND" /></cursor>
         </Button>
 

@@ -33,6 +33,7 @@ import javafx.scene.layout.VBox;
 
 // Manejo de colores y la ventana principal (Stage)
 import javafx.scene.paint.Color;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 // Control del tiempo para las animaciones
@@ -43,6 +44,8 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
+
+// Matias, josé y carlos
 // Controlador principal de la aplicación SANSI MAP
 // Esta clase se encarga de:
 // - Controlar el menú lateral deslizable
@@ -59,9 +62,9 @@ public class MainController {
     private VBox barraLateral, botoneslateral;
 
     // Imagen donde se mostrará el mapa de la facultad
-    @FXML
-    private ImageView mapaPrincipal;
+    @FXML private Pane contenedorMapa; // Reemplazamos el ImageView
 
+    private WebView webViewMapa;
     // Paneles que aparecerán con animaciones
     @FXML
     private StackPane iconoAnimado, mapaContenedor, celularContenedor;
@@ -81,49 +84,70 @@ public class MainController {
     // (Sirve para que la animación no se repita cada vez que subimos y bajamos)
     private final Set<Node> nodosAnimados = new HashSet<>();
 
+    //NUEVO!
+    // Variables para guardar la posición del ratón al arrastrar
+    private double ultimaPosX;
+    private double ultimaPosY;
+    // Definimos los límites como constantes arriba en tu clase, para que no haya zoom infinito
+    private static final double ZOOM_MAXIMO = 4.5; // No dejar que se acerque más de 4.5x
+    private static final double ZOOM_MINIMO = 0.6; // No dejar que se aleje más de 0.6x
+
     // Método initialize:
     // Se ejecuta automáticamente al cargar el FXML de esta ventana
     @FXML
     public void initialize() {
 
-        // 1. Intenta cargar la imagen principal del mapa
-        if (mapaPrincipal != null) {
-            try {
-                // Busca la ruta de la imagen en la carpeta resources
-                mapaPrincipal.setImage(
-                        new Image(
-                                getClass().getResource("/com/example/sansimap/MAPA_DE_SANSI.png").toExternalForm()
-                        )
-                );
-            } catch (Exception e) {
-                // Mensaje si la imagen no se encuentra
-                System.out.println("No se pudo cargar la imagen del mapa.");
-            }
+        // 1. INICIALIZAR EL MOTOR WEB PARA EL MAPA
+        webViewMapa = new WebView();
+
+        // Le damos un tamaño base grande para el campus
+        webViewMapa.setPrefSize(1200, 800);
+
+        // IMPORTANTE: Hacemos el WebView "transparente" a los clics del ratón.
+        // Así, los clics los detecta el Pane (contenedorMapa) para poder arrastrarlo.
+        webViewMapa.setMouseTransparent(true);
+
+        // Desactivamos el menú contextual (clic derecho del navegador)
+        webViewMapa.setContextMenuEnabled(false);
+
+        // 2. CARGAR EL SVG
+        java.net.URL svgUrl = getClass().getResource("/com/example/sansimap/MAPA.svg");
+        if (svgUrl != null) {
+            webViewMapa.getEngine().load(svgUrl.toExternalForm());
+            contenedorMapa.getChildren().add(webViewMapa);
+
+            // Centrar inicialmente
+            contenedorMapa.setTranslateX(50);
+            contenedorMapa.setTranslateY(50);
+        } else {
+            System.err.println("Error: Archivo SVG no encontrado.");
         }
 
-        // 2. Prepara las animaciones de la página
-        // Platform.runLater asegura que esto se ejecute DESPUÉS de que la ventana cargue por completo
-        Platform.runLater(() -> {
+        // --- LÓGICA DE ARRASTRE (PANEO) ---
+        contenedorMapa.setOnMousePressed(event -> {
+            ultimaPosX = event.getSceneX();
+            ultimaPosY = event.getSceneY();
+        });
 
-            // Ejecuta las animaciones de entrada de la parte superior (con retrasos en milisegundos)
-            animarEntrada(iconoAnimado, 100);
-            animarEntrada(tituloAnimado, 300);
-            animarEntrada(subtituloAnimado, 500);
-            animarEntrada(botonesAnimados, 700);
+        contenedorMapa.setOnMouseDragged(event -> {
+            double deltaX = event.getSceneX() - ultimaPosX;
+            double deltaY = event.getSceneY() - ultimaPosY;
+            contenedorMapa.setTranslateX(contenedorMapa.getTranslateX() + deltaX);
+            contenedorMapa.setTranslateY(contenedorMapa.getTranslateY() + deltaY);
+            ultimaPosX = event.getSceneX();
+            ultimaPosY = event.getSceneY();
+        });
 
-            // Activa el efecto de iluminación al pasar el ratón por los botones
-            aplicarEfectoHover(botonesAnimados);
-            aplicarEfectoHover(botoneslateral);
-
-            // 3. Detecta cuando el usuario baja o sube por la página (Scroll)
-            if (scrollPrincipal != null) {
-                scrollPrincipal.vvalueProperty().addListener(
-                        (obs, oldVal, newVal) ->
-                                // Llama a una función que decide qué animar según cuánto bajó el usuario
-                                verificarVisibilidad(newVal.doubleValue())
-                );
+        // --- LÓGICA DE ZOOM CON LA RUEDA DEL RATÓN ---
+        contenedorMapa.setOnScroll(event -> {
+            if (event.getDeltaY() > 0) {
+                aplicarZoom(1.1);
+            } else {
+                aplicarZoom(0.9);
             }
         });
+
+        // ... (Aquí mantienes el resto de tu código de animaciones y menú lateral)
     }
 
     // Método para ir a la pantalla de "Aulas Disponibles" (Horarios)
@@ -207,6 +231,31 @@ public class MainController {
 
         // Ejecuta la animación del menú
         transicion.play();
+    }
+    // Métodos enlazados a los botones "+" y "-" de la pantalla
+    @FXML
+    void zoomIn(ActionEvent event) {
+        aplicarZoom(1.2); // Acercar un 20%
+    }
+
+    @FXML
+    void zoomOut(ActionEvent event) {
+        aplicarZoom(0.8); // Alejar un 20%
+    }
+
+    // El motor matemático del Zoom
+    private void aplicarZoom(double factor) {
+        // Multiplicamos el tamaño actual por el factor de zoom
+        double nuevoZoomX = contenedorMapa.getScaleX() * factor;
+        double nuevoZoomY = contenedorMapa.getScaleY() * factor;
+
+        // ESTABLECEMOS LÍMITES DE SEGURIDAD
+        // Para que el usuario no aleje tanto que el mapa desaparezca (< 0.5)
+        // ni acerque tanto que se pixele excesivamente (> 5.0)
+        if (nuevoZoomX <= ZOOM_MAXIMO && nuevoZoomX >= ZOOM_MINIMO) {
+            contenedorMapa.setScaleX(nuevoZoomX);
+            contenedorMapa.setScaleY(nuevoZoomY);
+        }
     }
 
     // Función para crear un efecto de brillo y crecimiento en los botones (Hover)

@@ -11,13 +11,16 @@
 <!--
 Ventana de Inicio de SansiMap
 Muestra los botónes e imágenes correspondientes a esta parte INICIAL
+
+MIGUEL WORK
+
 -->
 
 <StackPane
         style="-fx-background-color: #ffffff;"
         xmlns="http://javafx.com/javafx/21"
         xmlns:fx="http://javafx.com/fxml/1"
-        fx:controller="com.example.sansimap.MainController">
+        fx:controller="com.example.sansimap.InicioController">
 
     <!-- Contenido principal desplazable -->
     <VBox>

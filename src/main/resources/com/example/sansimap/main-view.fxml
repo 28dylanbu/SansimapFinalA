@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.sansimap.MainController" style="-fx-background-color: linear-gradient(to bottom, #0a1f44, #123a7a);">
 
-    <Pane fx:id="contenedorMapa" style="-fx-background-color: transparent;">
+    <Pane fx:id="contenedorMapa" StackPane.alignment="TOP_LEFT" style="-fx-background-color: transparent;">
         <!--Aqui se add el SVG-->
     </Pane>
 

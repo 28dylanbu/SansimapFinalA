@@ -111,12 +111,25 @@ public class MainController {
         webViewMapa.setContextMenuEnabled(false);
 
         // 2. CARGAR EL SVG
-        java.net.URL svgUrl = getClass().getResource("/com/example/sansimap/MAPA.svg");
+        java.net.URL svgUrl = getClass().getResource("/com/example/sansimap/MAPA.svg"); // Asegúrate de que el nombre coincida (MAPA.svg)
+
         if (svgUrl != null) {
-            webViewMapa.getEngine().load(svgUrl.toExternalForm());
+            // Creamos una estructura HTML al vuelo
+            // - background-color: #FBEAE3 funde el fondo con tu mapa.
+            // - margin: 0; padding: 0 quita los bordes blancos.
+            // - object-fit: contain; hace que el mapa crezca al máximo sin deformarse.
+            String html = "<html>"
+                    + "<body style='margin: 0; padding: 0; background-color: #FBEAE3; overflow: hidden; display: flex; justify-content: center; align-items: center; height: 100vh; width: 100vw;'>"
+                    + "<img src='" + svgUrl.toExternalForm() + "' style='width: 100%; height: 100%; object-fit: contain;' />"
+                    + "</body>"
+                    + "</html>";
+
+            // Cargamos el HTML en lugar de cargar solo el archivo
+            webViewMapa.getEngine().loadContent(html);
+
             contenedorMapa.getChildren().add(webViewMapa);
 
-            // Centrar inicialmente
+            // Centrar inicialmente el contenedor
             contenedorMapa.setTranslateX(50);
             contenedorMapa.setTranslateY(50);
         } else {
@@ -140,10 +153,32 @@ public class MainController {
 
         // --- LÓGICA DE ZOOM CON LA RUEDA DEL RATÓN ---
         contenedorMapa.setOnScroll(event -> {
-            if (event.getDeltaY() > 0) {
-                aplicarZoom(1.1);
-            } else {
-                aplicarZoom(0.9);
+            event.consume(); // Bloqueamos el scroll normal de la página
+
+            double factor = event.getDeltaY() > 0 ? 1.1 : 0.9;
+            double escalaActual = contenedorMapa.getScaleX();
+            double nuevaEscala = escalaActual * factor;
+
+            // Verificamos nuestros límites de seguridad
+            if (nuevaEscala >= ZOOM_MINIMO && nuevaEscala <= ZOOM_MAXIMO) {
+
+                // 1. Obtenemos las coordenadas exactas locales del ratón
+                double mouseX = event.getX();
+                double mouseY = event.getY();
+
+                // 2. LA FÓRMULA MÁGICA CORREGIDA Y PERFECTA
+                // Calculamos cuánto "sobra" de tamaño al crecer o achicarse
+                double ajusteX = mouseX * (escalaActual - nuevaEscala);
+                double ajusteY = mouseY * (escalaActual - nuevaEscala);
+
+                // 3. Compensamos el movimiento moviendo el mapa en dirección contraria
+                contenedorMapa.setTranslateX(contenedorMapa.getTranslateX() + ajusteX);
+                contenedorMapa.setTranslateY(contenedorMapa.getTranslateY() + ajusteY);
+
+                // 4. Aplicamos el crecimiento a todo el contenedor
+                // (El WebView mantendrá los vectores nítidos automáticamente)
+                contenedorMapa.setScaleX(nuevaEscala);
+                contenedorMapa.setScaleY(nuevaEscala);
             }
         });
 
@@ -243,18 +278,26 @@ public class MainController {
         aplicarZoom(0.8); // Alejar un 20%
     }
 
-    // El motor matemático del Zoom
+    // El motor para los botones en pantalla
     private void aplicarZoom(double factor) {
-        // Multiplicamos el tamaño actual por el factor de zoom
-        double nuevoZoomX = contenedorMapa.getScaleX() * factor;
-        double nuevoZoomY = contenedorMapa.getScaleY() * factor;
+        double escalaActual = contenedorMapa.getScaleX();
+        double nuevaEscala = escalaActual * factor;
 
-        // ESTABLECEMOS LÍMITES DE SEGURIDAD
-        // Para que el usuario no aleje tanto que el mapa desaparezca (< 0.5)
-        // ni acerque tanto que se pixele excesivamente (> 5.0)
-        if (nuevoZoomX <= ZOOM_MAXIMO && nuevoZoomX >= ZOOM_MINIMO) {
-            contenedorMapa.setScaleX(nuevoZoomX);
-            contenedorMapa.setScaleY(nuevoZoomY);
+        if (nuevaEscala >= ZOOM_MINIMO && nuevaEscala <= ZOOM_MAXIMO) {
+
+            // Calculamos el centro exacto del contenedor
+            double centroX = contenedorMapa.getBoundsInLocal().getWidth() / 2;
+            double centroY = contenedorMapa.getBoundsInLocal().getHeight() / 2;
+
+            // Usamos la misma fórmula matemática de compensación
+            double ajusteX = centroX * (escalaActual - nuevaEscala);
+            double ajusteY = centroY * (escalaActual - nuevaEscala);
+
+            contenedorMapa.setTranslateX(contenedorMapa.getTranslateX() + ajusteX);
+            contenedorMapa.setTranslateY(contenedorMapa.getTranslateY() + ajusteY);
+
+            contenedorMapa.setScaleX(nuevaEscala);
+            contenedorMapa.setScaleY(nuevaEscala);
         }
     }
 

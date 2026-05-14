@@ -1,74 +1,45 @@
 package com.example.sansimap;
 
-// Importaciones necesarias de JavaFX
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+import javafx.scene.control.TextField;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 
-// Controlador de la ventana "Buscar Aula"
-// Esta clase permite:
-// - Buscar un aula ingresada por el usuario
-// - Enviar el dato a otra ventana
-// - Volver al menú principal
 public class BuscarAulaController {
 
-    // Campo de texto donde el usuario escribe el aula
     @FXML
     private TextField inputAula;
 
-    // Método que se ejecuta al presionar el botón buscar
+    // Variable para pasar el dato sin tocar CambiarVista
+    public static String aulaSeleccionada;
+
     @FXML
-    private void buscarAula(javafx.event.ActionEvent event) {
+    private void buscarAula(ActionEvent event) {
+        if (inputAula == null) return;
 
-        // Obtiene el texto ingresado por el usuario
-        String aula = inputAula.getText();
+        String texto = inputAula.getText();
 
-        // Validación básica:
-        // evita búsquedas vacías
-        if (aula == null || aula.isEmpty()) {
+        if (texto != null && !texto.trim().isEmpty()) {
+            // Guardamos el código
+            aulaSeleccionada = texto.trim();
+            System.out.println("🔎 Buscando aula: " + aulaSeleccionada);
 
-            System.out.println("Ingrese un aula");
-            return;
+            // Usamos tu método original de 2 parámetros
+            CambiarVista.cambiarContenidoVista(event, "resultado-aula.fxml");
         }
-
-        // Clase genérica (CambiarVista.java) para no repetir código de carga de FXML
-        CambiarVista.cambiarContenidoVista(event,"resultado-aula.fxml");
     }
 
-    // Método para volver al menú principal
     @FXML
     private void volverMenu() {
-
         try {
-
-            // Obtiene la ventana actual
             Stage stage = (Stage) inputAula.getScene().getWindow();
-
-            // Guarda el tamaño actual
-            double ancho = stage.getWidth();
-            double alto = stage.getHeight();
-
-            // Carga el archivo FXML del menú principal
-            FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("main-view.fxml")
-            );
-
-            // Carga la interfaz
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("main-view.fxml"));
             Parent root = loader.load();
-
-            // Cambia la escena actual
             stage.setScene(new Scene(root));
-
-            // Mantiene el tamaño anterior
-            stage.setWidth(ancho);
-            stage.setHeight(alto);
-
         } catch (Exception e) {
-
-            // Muestra errores en consola
             e.printStackTrace();
         }
     }

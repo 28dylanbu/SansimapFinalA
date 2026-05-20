@@ -504,7 +504,7 @@ ubicacion:Edificio 690
 piso:1er piso
 edificio:690_edif
 fotos:691A_aula.jpg
-ubicacionfoto:690_ubi.png
+ubicacionfoto:691_ubi.png
 horarios:
 #FIN
 
@@ -530,7 +530,7 @@ horarios:
 
 #AULA
 codigo:691D
-ubicacion:Edificio Academico
+ubicacion:Edificio 690
 piso:1er piso
 edificio:690_edif
 fotos:691D_aula.jpg,691D_int.jpg
@@ -560,7 +560,7 @@ horarios:
 
 #AULA
 codigo:692B
-ubicacion:Edificio Academico
+ubicacion:Edificio 690
 piso:2do piso
 edificio:690_edif
 fotos:692B_aula.jpg

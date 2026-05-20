@@ -1,54 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.ImageView?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.sansimap.ResultadoAulaController"
-            style="-fx-background-color: linear-gradient(to bottom, #0a1f44, #123a7a);">
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.example.sansimap.ResultadoAulaController">
 
-    <left>
-        <VBox spacing="15"
-              style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 0 20 20 0;"
-              prefWidth="260">
+    <BorderPane style="-fx-background-color: linear-gradient(to bottom right, #0a1f44, #1a4a9c);">
 
-            <Button text="← Volver"
-                    onMouseClicked="#volverBuscar"
-                    style="-fx-background-color: #6c757d; -fx-text-fill: white;"/>
+        <left>
+            <VBox spacing="25"
+                  style="-fx-background-color: white; -fx-padding: 30 25; -fx-background-radius: 0 25 25 0; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 15, 0, 0, 0);"
+                  prefWidth="300">
 
-            <Label fx:id="infoAula"
-                   text="Información del aula"
-                   wrapText="true"
-                   style="-fx-font-size: 14px; -fx-text-fill: #0a1f44;"/>
+                <Button text="← Volver a Búsqueda"
+                        onMouseClicked="#volverBuscar"
+                        style="-fx-background-color: #f1f3f5; -fx-text-fill: #0a1f44; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 10 15; -fx-cursor: hand; -fx-border-color: #dee2e6; -fx-border-radius: 8;"/>
 
+                <Region style="-fx-background-color: #e9ecef; -fx-pref-height: 1; -fx-min-height: 1;"/>
+
+                <Label text="📌 DETALLES DEL AULA" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #0a1f44;"/>
+
+                <VBox fx:id="contenedorInfo" spacing="15"/>
+
+                <Region prefHeight="10" VBox.vgrow="ALWAYS"/>
+
+                <VBox alignment="CENTER" spacing="10"
+                      style="-fx-background-color: #f8f9fa; -fx-padding: 15; -fx-background-radius: 10; -fx-border-color: #e9ecef; -fx-border-radius: 10;">
+                    <Label text="FACHADA DEL EDIFICIO"
+                           style="-fx-font-size: 12px; -fx-text-fill: #6c757d; -fx-font-weight: bold; -fx-letter-spacing: 1px;"/>
+                    <ImageView fx:id="imgEdificio"
+                               fitWidth="240"
+                               fitHeight="170"
+                               preserveRatio="true"
+                               style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 5, 0, 0, 2);"/>
+                    <Label text="(Clic para ampliar)" style="-fx-font-size: 10px; -fx-text-fill: #adb5bd;"/>
+                </VBox>
+
+            </VBox>
+        </left>
+
+        <center>
+            <VBox spacing="25"
+                  style="-fx-padding: 20 40;"
+                  alignment="TOP_CENTER">
+
+                <HBox alignment="CENTER_LEFT">
+                    <Label text="🗺️ Ubicación en el Mapa"
+                           style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label text="💡 Tip: Clic en cualquier imagen para ampliarla" style="-fx-text-fill: #a5b4ce; -fx-font-size: 14px; -fx-font-style: italic;"/>
+                </HBox>
+
+                <StackPane style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 20, 0, 0, 8);">
+                    <ImageView fx:id="fotoUbicacion"
+                               fitWidth="680"
+                               fitHeight="360"
+                               preserveRatio="true"
+                               visible="false"/>
+                </StackPane>
+
+                <HBox alignment="CENTER_LEFT" style="-fx-padding: 10 0 0 0;">
+                    <Label text="📸 Galería del Aula"
+                           style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+                </HBox>
+
+                <ScrollPane fitToHeight="true"
+                            fitToWidth="true"
+                            vbarPolicy="NEVER"
+                            hbarPolicy="AS_NEEDED"
+                            style="-fx-background: transparent; -fx-background-color: transparent; -fx-control-inner-background: transparent;">
+                    <HBox fx:id="contenedorFotos"
+                          spacing="30"
+                          alignment="CENTER"
+                          style="-fx-padding: 15 20 25 20;"/>
+                </ScrollPane>
+
+            </VBox>
+        </center>
+    </BorderPane>
+
+    <StackPane fx:id="capaZoom"
+               visible="false"
+               style="-fx-background-color: rgba(0,0,0,0.90); -fx-cursor: hand;"
+               onMouseClicked="#cerrarZoom">
+
+        <VBox alignment="CENTER" spacing="20">
+            <ImageView fx:id="imagenAmpliada"
+                       fitWidth="1000"
+                       fitHeight="700"
+                       preserveRatio="true"/>
+            <Label text=" Clic Derecho para ROTAR  |  Clic Izquierdo en el fondo para CERRAR "
+                   style="-fx-text-fill: #1a4a9c; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: white; -fx-padding: 8 20; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 10, 0, 0, 0);"/>
         </VBox>
-    </left>
+    </StackPane>
 
-    <center>
-        <VBox spacing="10"
-              style="-fx-padding: 20;"
-              alignment="CENTER">
-
-            <ImageView fx:id="fotoUbicacion"
-                       fitWidth="460"
-                       fitHeight="200"
-                       preserveRatio="true"
-                       visible="false"/>
-
-            <ScrollPane fitToHeight="true"
-                        hbarPolicy="AS_NEEDED"
-                        vbarPolicy="NEVER"
-                        style="-fx-background: transparent; -fx-background-color: transparent;">
-                <HBox fx:id="contenedorFotos"
-                      spacing="10"
-                      alignment="CENTER"/>
-            </ScrollPane>
-
-        </VBox>
-    </center>
-
-</BorderPane>
+</StackPane>

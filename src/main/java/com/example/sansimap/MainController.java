@@ -202,13 +202,6 @@ public class MainController {
 
     }
 
-    // Método para regresar a la pantalla de Inicio de Sesión
-    @FXML
-    protected void cambiarALogin(ActionEvent event) {
-        cambiarEscena(event, "hello-view.fxml");
-
-    }
-
     // Función general y reutilizable para cambiar de ventanas sin perder el tamaño actual
     private void cambiarEscena(ActionEvent event, String fxml) {
         try {
@@ -302,86 +295,4 @@ public class MainController {
         }
     }
 
-    // Función para crear un efecto de brillo y crecimiento en los botones (Hover)
-    private void aplicarEfectoHover(Pane contenedor) {
-
-        // Si el contenedor está vacío, detiene el proceso
-        if (contenedor == null) {
-            return;
-        }
-
-        // Revisa uno por uno los elementos dentro del contenedor
-        for (Node nodo : contenedor.getChildren()) {
-
-            // Pregunta si el elemento actual es un Botón
-            if (nodo instanceof Button btn) {
-
-                // Crea una sombra de color blanco
-                DropShadow brillo = new DropShadow(20, Color.WHITE);
-
-                // ¿Qué pasa cuando el ratón ENTRA al botón?
-                btn.setOnMouseEntered(e -> {
-                    btn.setEffect(brillo); // Enciende la sombra
-                    btn.setScaleX(1.05);   // Lo hace 5% más ancho
-                    btn.setScaleY(1.05);   // Lo hace 5% más alto
-                });
-
-                // ¿Qué pasa cuando el ratón SALE del botón?
-                btn.setOnMouseExited(e -> {
-                    btn.setEffect(null);   // Apaga la sombra
-                    btn.setScaleX(1.0);    // Vuelve al ancho normal
-                    btn.setScaleY(1.0);    // Vuelve al alto normal
-                });
-            }
-        }
-    }
-
-    // Función para hacer que los elementos aparezcan suavemente desde abajo
-    private void animarEntrada(Node nodo, int delayMillis) {
-
-        // Si el elemento no existe o ya fue animado antes, no hace nada
-        if (nodo == null || nodosAnimados.contains(nodo)) {
-            return;
-        }
-
-        // Registra este elemento para no volver a animarlo en el futuro
-        nodosAnimados.add(nodo);
-
-        // Estado inicial: lo hace totalmente invisible (0) y lo baja 40 píxeles
-        nodo.setOpacity(0);
-        nodo.setTranslateY(40);
-
-        // 1. Animación de Desvanecimiento (Aparecer de invisible a visible)
-        FadeTransition fade = new FadeTransition(Duration.millis(800), nodo);
-        fade.setToValue(1); // Destino: 100% visible
-        fade.setDelay(Duration.millis(delayMillis)); // Tiempo de espera antes de iniciar
-
-        // 2. Animación de Movimiento (Subir a su posición original)
-        TranslateTransition translate = new TranslateTransition(Duration.millis(800), nodo);
-        translate.setToY(0); // Destino: Posición original (0)
-        translate.setDelay(Duration.millis(delayMillis));
-
-        // Ejecuta ambas animaciones al mismo tiempo
-        fade.play();
-        translate.play();
-    }
-
-    // Función que decide qué partes animar dependiendo de cuánto bajó el Scroll
-    private void verificarVisibilidad(double scrollPos) {
-
-        // Si bajó un 15%, aparece el mapa
-        if (scrollPos > 0.15) {
-            animarEntrada(mapaContenedor, 0);
-        }
-
-        // Si bajó un 45%, aparece la sección del celular
-        if (scrollPos > 0.45) {
-            animarEntrada(celularContenedor, 0);
-        }
-
-        // Si bajó un 70%, aparece el cuadro de navegación visual inferior
-        if (scrollPos > 0.70) {
-            animarEntrada(navegacionContenedor, 0);
-        }
-    }
 }

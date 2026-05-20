@@ -29,7 +29,7 @@ public class InicioController {
     @FXML private VBox barraLateral, botoneslateral;
     @FXML private ImageView mapaPrincipal;
     @FXML private StackPane iconoAnimado, mapaContenedor, celularContenedor;
-    @FXML private Label tituloAnimado, subtituloAnimado, textoInferiorAnimado;
+    @FXML private Label tituloAnimado, subtituloAnimado;
     @FXML private HBox botonesAnimados, statsAnimados, navegacionContenedor;
 
     private boolean menuAbierto = false;
@@ -59,16 +59,6 @@ public class InicioController {
                 scrollPrincipal.vvalueProperty().addListener((obs, oldVal, newVal) -> verificarVisibilidad(newVal.doubleValue()));
             }
         });
-    }
-
-    // --- MÉTODOS DE NAVEGACIÓN (LOS QUE CAUSAN EL ERROR) ---
-
-    @FXML
-    private void irAulasDisponibles(ActionEvent event) throws IOException {
-        System.out.println("Click detectado en Aulas Disponibles");
-        // Usamos / al principio para buscar desde la raíz de resources
-        // Clase genérica (CambiarVista.java) para no repetir código de carga de FXML
-        CambiarVista.cambiarContenidoVista(event, "horario-view.fxml");
     }
 
     @FXML

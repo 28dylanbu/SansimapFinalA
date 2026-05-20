@@ -51,7 +51,7 @@ public class GestorArchivo {
                     lista.add(actual);
                     actual = null; // Reiniciamos la variable para que esté lista para el próximo bloque #AULA.
                 }
-                // Si estamos dentro de un bloque de aula (actual != null) y la línea contiene ":"
+                // Si estamos dentro de un bloque de aula (actual!= null) y la línea contiene ":"
                 else if (actual != null && linea.contains(":")) {
 
                     int sep = linea.indexOf(":"); // Buscamos en qué posición están los dos puntos.

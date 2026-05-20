@@ -62,7 +62,8 @@ public class MainController {
     private VBox barraLateral, botoneslateral;
 
     // Imagen donde se mostrará el mapa de la facultad
-    @FXML private Pane contenedorMapa; // Reemplazamos el ImageView
+    @FXML
+    private Pane contenedorMapa; // Reemplazamos el ImageView
 
     private WebView webViewMapa;
     // Paneles que aparecerán con animaciones
@@ -111,11 +112,11 @@ public class MainController {
         webViewMapa.setContextMenuEnabled(false);
 
         // 2. CARGAR EL SVG
-        java.net.URL svgUrl = getClass().getResource("/com/example/sansimap/MAPA.svg"); // Asegúrate de que el nombre coincida (MAPA.svg)
+        java.net.URL svgUrl = getClass().getResource("/com/example/sansimap/MAPA.svg");
 
         if (svgUrl != null) {
-            // Creamos una estructura HTML al vuelo
-            // - background-color: #FBEAE3 funde el fondo con tu mapa.
+
+            // - background-color: #FBEAE3 funde el fondo con del mapa.
             // - margin: 0; padding: 0 quita los bordes blancos.
             // - object-fit: contain; hace que el mapa crezca al máximo sin deformarse.
             String html = "<html>"
@@ -124,7 +125,7 @@ public class MainController {
                     + "</body>"
                     + "</html>";
 
-            // Cargamos el HTML en lugar de cargar solo el archivo
+            // HTML en lugar de cargar solo el archivo
             webViewMapa.getEngine().loadContent(html);
 
             contenedorMapa.getChildren().add(webViewMapa);
@@ -190,7 +191,6 @@ public class MainController {
     @FXML
     private void irAulasDisponibles(ActionEvent event) {
         cambiarEscena(event, "horario-view.fxml");
-
 
 
     }
@@ -267,6 +267,7 @@ public class MainController {
         // Ejecuta la animación del menú
         transicion.play();
     }
+
     // Métodos enlazados a los botones "+" y "-" de la pantalla
     @FXML
     void zoomIn(ActionEvent event) {
@@ -382,27 +383,5 @@ public class MainController {
         if (scrollPos > 0.70) {
             animarEntrada(navegacionContenedor, 0);
         }
-    }
-
-    // ==========================================
-    // SECCIÓN DE BOTONES TEMPORALES (POR HACER)
-    // ==========================================
-
-    // Al presionar "Edificio Principal" en el panel lateral
-    @FXML
-    void irEdificioPrincipal(ActionEvent event) {
-        System.out.println("Edificio Principal");
-    }
-
-    // Al presionar "Laboratorios"
-    @FXML
-    void irLaboratorios(ActionEvent event) {
-        System.out.println("Laboratorios");
-    }
-
-    // Al presionar "Aulas Teóricas"
-    @FXML
-    void irAulasTeoricas(ActionEvent event) {
-        System.out.println("Aulas Teóricas");
     }
 }

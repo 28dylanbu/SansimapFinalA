@@ -24,7 +24,7 @@ Muestra los botónes e imágenes correspondientes a esta parte INICIAL
 
             <!-- Botón en la Barra Superior para abrir/cerrar el menú lateral -->
             <Button onAction="#toggleMenu" style="-fx-font-family: 'Century Gothic'; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: transparent; -fx-text-fill: #0a1f44;" text="☰ Menú">
-                <!-- Indicador de poder hacer click -->
+                <!-- Indicador de poder interactuar -->
                 <cursor>
                     <Cursor fx:constant="HAND" />
                 </cursor>
@@ -40,17 +40,17 @@ Muestra los botónes e imágenes correspondientes a esta parte INICIAL
         <!-- Deslizador "Scroll" principal de toda la página(ARRIBA-ABAJO) -->
         <ScrollPane fx:id="scrollPrincipal" fitToWidth="true" style="-fx-background-color: #ffffff; -fx-border-color: transparent;" VBox.vgrow="ALWAYS">
 
-            <VBox spacing="0" style="-fx-background-color: #ffffff;">
+            <VBox style="-fx-background-color: #ffffff;">
 
                 <!-- Sección Principal -->
                 <VBox alignment="CENTER" spacing="25" style="-fx-background-image: url('fondo.jpeg'); -fx-background-size: cover; -fx-background-color: linear-gradient(to bottom right, rgba(10,31,68,0.95), rgba(214,40,40,0.95)); -fx-background-blend-mode: multiply; -fx-padding: 80 40;">
 
                     <!-- Logo con Entrada Animada -->
                     <StackPane fx:id="iconoAnimado" style="-fx-max-width: 80; -fx-max-height: 80; -fx-background-radius: 20; -fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 15, 0, 0, 5);">
-                        <ImageView fitHeight="86" fitWidth="86" preserveRatio="false">
-                            <image>
+                        <ImageView fitHeight="86" fitWidth="86" >
+
                                 <Image url="@logo.jpeg" />
-                            </image>
+
                             <!-- Marco que sostiene la imágen -->
                             <clip>
                                 <Rectangle arcHeight="50" arcWidth="60" height="85" width="85" />
@@ -68,7 +68,7 @@ Muestra los botónes e imágenes correspondientes a esta parte INICIAL
                     <!-- Botón principal de Inició de Sesión o Registro -->
                     <HBox fx:id="botonesAnimados" alignment="CENTER" spacing="20">
                         <Button onAction="#cambiarALogin" style="-fx-font-family: 'Century Gothic'; -fx-background-color: white; -fx-text-fill: #0a1f44; -fx-background-radius: 30; -fx-font-weight: bold; -fx-padding: 12 35; -fx-font-size: 15px;" text="Iniciar">
-                            <!-- Indicador de poder hacer click -->
+                            <!-- Indicador de poder hacer interactuar -->
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
@@ -113,9 +113,7 @@ Muestra los botónes e imágenes correspondientes a esta parte INICIAL
                         <StackPane fx:id="mapaContenedor" style="-fx-background-color: #f4f7f8; -fx-border-color: #0a1f44; -fx-border-width: 2; -fx-background-radius: 15; -fx-border-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 15, 0, 0, 8);" HBox.hgrow="ALWAYS">
                             <Label style="-fx-font-family: 'Candara'; -fx-text-fill: #d62828;" text="Si ves esto, la ruta de mapa.png está mal escrita" />
                             <ImageView fitWidth="900" preserveRatio="true">
-                                <image>
                                     <Image url="@mapa.png" />
-                                </image>
                             </ImageView>
                         </StackPane>
                         <!-- Barra Lateral Derecha de Búsqueda Rápida -->
@@ -159,7 +157,7 @@ Muestra los botónes e imágenes correspondientes a esta parte INICIAL
 
                     <HBox alignment="CENTER" spacing="20">
                         <VBox prefWidth="320" spacing="15" style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 10, 0, 0, 5);">
-                            <StackPane alignment="CENTER" style="-fx-background-color: #d62828; -fx-background-radius: 12; -fx-min-width: 45; -fx-min-height: 45; -fx-max-width: 45;">
+                            <StackPane  style="-fx-background-color: #d62828; -fx-background-radius: 12; -fx-min-width: 45; -fx-min-height: 45; -fx-max-width: 45;">
                                 <Label style="-fx-text-fill: white; -fx-font-size: 20px;" text="🔍" />
                             </StackPane>
                             <Label style="-fx-font-family: 'Century Gothic'; -fx-font-weight: bold; -fx-font-size: 16px; -fx-text-fill: #0a1f44;" text="Búsqueda por Nombre de Aula" />
@@ -167,7 +165,7 @@ Muestra los botónes e imágenes correspondientes a esta parte INICIAL
                         </VBox>
 
                         <VBox prefWidth="320" spacing="15" style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 10, 0, 0, 5);">
-                            <StackPane alignment="CENTER" style="-fx-background-color: #0a1f44; -fx-background-radius: 12; -fx-min-width: 45; -fx-min-height: 45; -fx-max-width: 45;">
+                            <StackPane  style="-fx-background-color: #0a1f44; -fx-background-radius: 12; -fx-min-width: 45; -fx-min-height: 45; -fx-max-width: 45;">
                                 <Label style="-fx-text-fill: white; -fx-font-size: 20px;" text="➤" />
                             </StackPane>
                             <Label style="-fx-font-family: 'Century Gothic'; -fx-font-weight: bold; -fx-font-size: 16px; -fx-text-fill: #0a1f44;" text="Navegación Visual" />
@@ -176,7 +174,7 @@ Muestra los botónes e imágenes correspondientes a esta parte INICIAL
 
                         <VBox prefWidth="320" spacing="15" style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 10, 0, 0, 5);">
                             <HBox alignment="CENTER">
-                                <StackPane alignment="CENTER" style="-fx-background-color: #d62828; -fx-background-radius: 12; -fx-min-width: 45; -fx-min-height: 45; -fx-max-width: 45;">
+                                <StackPane  style="-fx-background-color: #d62828; -fx-background-radius: 12; -fx-min-width: 45; -fx-min-height: 45; -fx-max-width: 45;">
                                     <Label style="-fx-text-fill: white; -fx-font-size: 20px;" text="🕒" />
                                 </StackPane>
                                 <Region HBox.hgrow="ALWAYS" />
@@ -189,7 +187,7 @@ Muestra los botónes e imágenes correspondientes a esta parte INICIAL
 
                     <HBox alignment="CENTER" spacing="20">
                         <VBox prefWidth="320" spacing="15" style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 10, 0, 0, 5);">
-                            <StackPane alignment="CENTER" style="-fx-background-color: #0a1f44; -fx-background-radius: 12; -fx-min-width: 45; -fx-min-height: 45; -fx-max-width: 45;">
+                            <StackPane  style="-fx-background-color: #0a1f44; -fx-background-radius: 12; -fx-min-width: 45; -fx-min-height: 45; -fx-max-width: 45;">
                                 <Label style="-fx-text-fill: white; -fx-font-size: 20px;" text="📖" />
                             </StackPane>
                             <Label style="-fx-font-family: 'Century Gothic'; -fx-font-weight: bold; -fx-font-size: 16px; -fx-text-fill: #0a1f44;" text="Información Detallada" />
@@ -197,7 +195,7 @@ Muestra los botónes e imágenes correspondientes a esta parte INICIAL
                         </VBox>
 
                         <VBox prefWidth="320" spacing="15" style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 10, 0, 0, 5);">
-                            <StackPane alignment="CENTER" style="-fx-background-color: #d62828; -fx-background-radius: 12; -fx-min-width: 45; -fx-min-height: 45; -fx-max-width: 45;">
+                            <StackPane  style="-fx-background-color: #d62828; -fx-background-radius: 12; -fx-min-width: 45; -fx-min-height: 45; -fx-max-width: 45;">
                                 <Label style="-fx-text-fill: white; -fx-font-size: 20px;" text="📅" />
                             </StackPane>
                             <Label style="-fx-font-family: 'Century Gothic'; -fx-font-weight: bold; -fx-font-size: 16px; -fx-text-fill: #0a1f44;" text="Mapa Interactivo" />
@@ -225,9 +223,7 @@ Muestra los botónes e imágenes correspondientes a esta parte INICIAL
                     <HBox alignment="CENTER" spacing="50">
                         <StackPane fx:id="celularContenedor" prefHeight="500" prefWidth="300" style="-fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 20, 0, 0, 10);" HBox.hgrow="NEVER">
                             <ImageView fitHeight="500" fitWidth="300">
-                                <image>
                                     <Image url="@mano.jpg" />
-                                </image>
                                 <clip>
                                     <Rectangle arcHeight="30" arcWidth="30" height="500" width="350" />
                                 </clip>
@@ -253,7 +249,7 @@ Muestra los botónes e imágenes correspondientes a esta parte INICIAL
                         </VBox>
                     </HBox>
                     <!-- Sección de Navegación Visual(Descripción) -->
-                    <VBox alignment="CENTER" fillWidth="false" spacing="0">
+                    <VBox alignment="CENTER" fillWidth="false" >
                         <padding>
                             <Insets bottom="60" top="40" />
                         </padding>
@@ -264,10 +260,8 @@ Muestra los botónes e imágenes correspondientes a esta parte INICIAL
                                 <Label style="-fx-font-family: 'Candara'; -fx-text-fill: rgba(255,255,255,0.85); -fx-wrap-text: true; -fx-font-size: 15px;" text="Con SANSI MAP, no solo ves la ubicación en el mapa. El sistema te muestra fotos reales del lugar que buscas: puertas de aulas, pasillos, escaleras y puntos de referencia. Así llegas a tu destino sin confusiones." />
                             </VBox>
                             <StackPane style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 15, 0, 0, 8);">
-                                <ImageView fitHeight="280" fitWidth="450" preserveRatio="false">
-                                    <image>
+                                <ImageView fitHeight="280" fitWidth="450" >
                                         <Image url="@docente.jpg" />
-                                    </image>
                                     <clip>
                                         <Rectangle arcHeight="30" arcWidth="30" height="280" width="450" />
                                     </clip>
@@ -285,9 +279,7 @@ Muestra los botónes e imágenes correspondientes a esta parte INICIAL
                             <HBox alignment="CENTER_LEFT" spacing="10">
                                 <StackPane style="-fx-background-color: white; -fx-background-radius: 50; -fx-padding: 5;">
                                     <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
-                                        <image>
                                             <Image url="@logo.jpeg" />
-                                        </image>
                                     </ImageView>
                                 </StackPane>
                                 <Label style="-fx-font-family: 'Century Gothic'; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 18px;" text="SANSI MAP" />
@@ -300,9 +292,7 @@ Muestra los botónes e imágenes correspondientes a esta parte INICIAL
                             <!-- MODIFICACIÓN: Imagen de pinche en la sección de contacto -->
                             <HBox alignment="CENTER_LEFT" spacing="5">
                                 <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
-                                    <image>
                                         <Image url="@umss.png" />
-                                    </image>
                                 </ImageView>
                                 <Label style="-fx-font-family: 'Candara'; -fx-text-fill: rgba(255,255,255,0.6); -fx-font-size: 13px;" text="Universidad Mayor de San Simón&#10;Cochabamba, Bolivia" />
                             </HBox>
@@ -332,9 +322,7 @@ Muestra los botónes e imágenes correspondientes a esta parte INICIAL
 
             <StackPane style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 5;">
                 <ImageView fitHeight="40" fitWidth="40" preserveRatio="true">
-                    <image>
                         <Image url="@umss.png" />
-                    </image>
                 </ImageView>
             </StackPane>
             <VBox>

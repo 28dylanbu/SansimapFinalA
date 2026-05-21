@@ -89,8 +89,6 @@ Muestra una lista de aulas y una imagen del mapa.
 
                     preserveRatio="true"
 
-                    smooth="true"
-
                     pickOnBounds="true"/>
 
         </StackPane>

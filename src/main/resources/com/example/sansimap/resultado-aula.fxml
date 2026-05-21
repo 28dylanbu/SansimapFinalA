@@ -75,7 +75,6 @@
                 <ScrollPane fitToHeight="true"
                             fitToWidth="true"
                             vbarPolicy="NEVER"
-                            hbarPolicy="AS_NEEDED"
                             style="-fx-background: transparent; -fx-background-color: transparent; -fx-control-inner-background: transparent;">
                     <HBox fx:id="contenedorFotos"
                           spacing="30"

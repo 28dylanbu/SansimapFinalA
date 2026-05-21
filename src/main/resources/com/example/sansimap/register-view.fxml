@@ -29,13 +29,13 @@
             <Label style="-fx-font-size: 16; -fx-text-fill: #808080;" text="👤" />
             <TextField fx:id="campoNombre" promptText="Nombre completo" HBox.hgrow="ALWAYS" style="-fx-background-color: transparent; -fx-prompt-text-fill: #999999; -fx-text-fill: #333333;" />
         </HBox>
-        <Label fx:id="labelLimiteNombre" text="0/30 caracteres permitidos" style="-fx-font-size: 10; -fx-text-fill: #999999; -fx-padding: -10 0 0 15;" maxWidth="Infinity" alignment="CENTER_LEFT"/>
+        <Label fx:id="labelLimiteNombre" text="0/30 caracteres permitidos" style="-fx-font-size: 10; -fx-text-fill: #999999; -fx-padding: -10 0 0 15;" maxWidth="Infinity" />
 
         <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-border-color: #b3b3b3; -fx-border-radius: 20; -fx-background-color: transparent; -fx-padding: 8 15 8 15;">
             <Label style="-fx-font-size: 16; -fx-text-fill: #808080;" text="👤" />
             <TextField fx:id="campoCorreo" promptText="Correo Electrónico" HBox.hgrow="ALWAYS" style="-fx-background-color: transparent; -fx-prompt-text-fill: #999999; -fx-text-fill: #333333;" />
         </HBox>
-        <Label fx:id="labelLimiteCorreo" text="0/30 caracteres permitidos" style="-fx-font-size: 10; -fx-text-fill: #999999; -fx-padding: -10 0 0 15;" maxWidth="Infinity" alignment="CENTER_LEFT"/>
+        <Label fx:id="labelLimiteCorreo" text="0/30 caracteres permitidos" style="-fx-font-size: 10; -fx-text-fill: #999999; -fx-padding: -10 0 0 15;" maxWidth="Infinity" />
 
         <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-border-color: #b3b3b3; -fx-border-radius: 20; -fx-background-color: transparent; -fx-padding: 8 15 8 15;">
             <Label style="-fx-font-size: 16; -fx-text-fill: #808080;" text="🔒" />
@@ -47,7 +47,7 @@
                 <cursor><Cursor fx:constant="HAND" /></cursor>
             </Label>
         </HBox>
-        <Label fx:id="labelLimitePass" text="0/30 caracteres permitidos" style="-fx-font-size: 10; -fx-text-fill: #999999; -fx-padding: -10 0 0 15;" maxWidth="Infinity" alignment="CENTER_LEFT"/>
+        <Label fx:id="labelLimitePass" text="0/30 caracteres permitidos" style="-fx-font-size: 10; -fx-text-fill: #999999; -fx-padding: -10 0 0 15;" maxWidth="Infinity" />
 
         <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-border-color: #b3b3b3; -fx-border-radius: 20; -fx-background-color: transparent; -fx-padding: 8 15 8 15;">
             <Label style="-fx-font-size: 16; -fx-text-fill: #808080;" text="🔒" />

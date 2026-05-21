@@ -30,7 +30,6 @@
     <center>
         <ScrollPane fitToWidth="true"
                     style="-fx-background: transparent; -fx-background-color: transparent;"
-                    vbarPolicy="AS_NEEDED"
                     hbarPolicy="NEVER">
             <VBox fx:id="contenedorHorarios"
                   spacing="15"

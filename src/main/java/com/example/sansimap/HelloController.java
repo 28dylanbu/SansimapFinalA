@@ -21,7 +21,7 @@ public class HelloController {
 
     @FXML
     public void initialize() {
-        // 2. MAGIA: Sincronizamos el texto de ambos campos.
+        // Sincronizamos el texto de ambos campos.
         // Si el usuario escribe en el oculto, se copia al visible, y viceversa.
         campoPasswordVisible.textProperty().bindBidirectional(campoPasswordOculto.textProperty());
     }

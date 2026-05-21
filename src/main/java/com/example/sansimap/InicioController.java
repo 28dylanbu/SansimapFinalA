@@ -73,9 +73,6 @@ public class InicioController {
         CambiarVista.cambiarContenidoVista(event, "hello-view.fxml");
     }
 
-    // Clase genérica (CambiarVista.java) para no repetir código de carga de FXML
-
-
     // --- LÓGICA VISUAL ---
 
     @FXML
